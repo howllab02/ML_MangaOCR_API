@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def hello_world():  # put application's code here
-    return 'Hello World!'
+    return 'Welcome'
 
 
 @app.route('/detection/', methods=["POST"])
