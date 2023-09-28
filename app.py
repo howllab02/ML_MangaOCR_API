@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, request
-from detection.utils import weight, to_tensor
 from detection.detection_model import YoloModel
 from recognition.rec_model import OCRModel
+from functions.utils import crop_img, img2text, to_tensor, weight
 
 app = Flask(__name__)
+
+model_detection = YoloModel(weight)
+model_rec = OCRModel("./models/TrOCRMangaRec/best_model", "./recognition/tokenizer", "./recognition/processor")
 
 
 @app.route('/', methods=["GET"])
@@ -17,8 +20,7 @@ def detection():
         file = request.files['file']
         img_bytes = file.read()
         np_img = to_tensor(img_bytes)
-        model = YoloModel(weight)
-        result = model.predict(np_img)
+        result = model_detection.predict(np_image=np_img)
         return jsonify({"bbox": result.tolist()})
 
 
@@ -28,9 +30,20 @@ def recognition():
         file = request.files['file']
         img_bytes = file.read()
         np_img = to_tensor(img_bytes)
-        model = OCRModel("./models/TrOCRMangaRec/best_model","./recognition/tokenizer", "./recognition/processor")
-        result = model.predict(np_img)
+        result = model_rec.predict(np_img)
         return jsonify({"text": result})
+
+
+@app.route("/detection_and_recognition/", methods=["POST"])
+def detect_and_recognition():
+    if request.method == 'POST':
+        file = request.files['file']
+        image_bytes = file.read()
+        np_img = to_tensor(image_bytes)
+        bbox = model_detection.predict(np_img)
+        text_img = crop_img(np_img, bbox)
+        list_text = img2text(list_img=text_img, model=model_rec)
+        return jsonify({"text": list_text})
 
 
 if __name__ == '__main__':
