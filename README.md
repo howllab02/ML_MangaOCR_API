@@ -12,7 +12,7 @@
 <p>bạn có thể tải về model recognition <a href="https://drive.google.com/file/d/1EAmOW1d8uSX_Lr90-tliXJNquE-6Ev-M/view?usp=sharing">tại đây</a> </p>
 <h2>Hướng dẫn</h2>
 <p>tải model về và giải nén rồi bỏ thư mục chứa model vào thư mục models.</p>
-<h2>Model được sử dụng là:</h2>
+<h2>Model được sử dụng</h2>
 <p>- Detection: Yolov5 <br>
 - Recognition: TrOCR </p>
 <h2>Lời cảm ơn </h2>
