@@ -6,4 +6,8 @@
 <div>
 <h3>input image:</h3>
 <img src="assets/recognition1.jpg">
-<p>result: お 光 さ ん と 弥 吉 こ の 一 見 何 の か か わ り も な い 二 つ の 杞 憂 を う ま く 片 づ け ち ま っ た の が 今 回 の 事 件 は</p></div>
+<h3>result</h3>
+<p>お 光 さ ん と 弥 吉 こ の 一 <br>
+見 何 の か か わ り も な い 二 つ の 杞 憂<br>
+を う ま く 片 づ け ち ま っ た の が 今 回<br>
+の 事 件 は</p></div>
