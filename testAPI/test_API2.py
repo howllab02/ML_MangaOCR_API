@@ -12,10 +12,13 @@ img = cv2.imread(image_path)
 
 for item in result:
     bbox = item["bbox"]
+    print(item["text"])
     img = cv2.rectangle(img, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), color=(0, 0, 255),
                         thickness=2)
 
+cv2.imwrite("../assets/detection.jpg", img)
 cv2.namedWindow("page", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("page", 500, 700)
+cv2.resizeWindow("page", 700, 500)
 cv2.imshow("page", img)
 cv2.waitKey()
+
