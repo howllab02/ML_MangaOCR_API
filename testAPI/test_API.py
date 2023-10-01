@@ -1,7 +1,7 @@
 import requests
 import cv2
 
-image_path = "../images/015.jpg"
+image_path = "../images/033.jpg"
 
 
 def draw_result(img, list_bbox):
