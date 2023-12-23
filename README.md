@@ -10,6 +10,8 @@
 を う ま く 片 づ け ち ま っ た の が 今 回<br>
 の 事 件 は</p></div>
 <p>bạn có thể tải về model recognition <a href="https://drive.google.com/file/d/1EAmOW1d8uSX_Lr90-tliXJNquE-6Ev-M/view?usp=sharing">tại đây</a> </p>
+<h2>Translation<\h2>
+<p>chúng tôi còn đang phát triển model dịch, vậy nên chúng tôi sẽ sử dụng google dịch cho phần này.</p>
 <h2>Hướng dẫn</h2>
 <p>tải model về và giải nén rồi bỏ thư mục chứa model vào thư mục models.</p>
 <h2>Model được sử dụng</h2>
